@@ -1,0 +1,38 @@
+.cart_btn {
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+// Container for the cart button and text
+.snipcart-summary {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 40px; // Account for the fixed top bar
+  max-width: 1400px;
+  place-items: center; 
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "image info";
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 18.025px 20px rgba(0,0,0,.25);
+  margin: 0 auto;
+  width: 100%; /* Make sure product takes full width of its grid cell */
+  max-width: 900px; /* Maximum width for each product */
+}
