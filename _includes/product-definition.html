@@ -1,9 +1,18 @@
-<button
- class="buy-button snipcart-add-item"
- data-item-id="{{ product.identifier }}"
- data-item-name="{{ product.name }}"
- data-item-price="{{ product.price }}"
- data-item-image="{{ product.image }}"
- data-item-description="{{ product.content | remove: '<p>' | remove: '</p>' }}">
- Add to cart (${{ product.price }})
-</button>
+{% assign item = include.product | default: page %}
+
+{% if item.available == false %}
+  <button class="buy-button coming-soon" disabled>
+    COMING SOON
+  </button>
+{% else %}
+  <button
+    class="buy-button snipcart-add-item"
+    data-item-id="{{ item.id }}"
+    data-item-name="{{ item.title }}"
+    data-item-price="{{ item.price }}"
+    data-item-url="{{ item.url }}"
+    data-item-image="{{ item.image }}"
+    data-item-description="{{ item.description }}">
+    Add to cart (${{ item.price }})
+  </button>
+{% endif %}

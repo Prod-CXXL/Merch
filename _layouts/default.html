@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-<body>
- {% include header.html %}
- <main class="main">
- <div class="products">
- {{ content }}
- </div>
- </main>
-</body>
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
-<script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"></script>
-<div id="snipcart" data-api-key="N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4" hidden></div>
+<html lang="en">
+  <!-- Head -->
+  {% include head.html %}
+
+  <!-- Body -->
+  <body>
+    <!-- Header -->
+    {% include header.html %}
+    <div class="overlay"></div>
+    
+    <!-- Main content -->
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    <!-- Footer -->
+    {% include footer.html %}
+    <!-- near the end of your _layouts/default.html, before </body> -->
+    <div hidden id="snipcart"></div>
+  </body>
+
+  <!-- Load the JavaScript -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+
 </html>

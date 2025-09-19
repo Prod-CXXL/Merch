@@ -1,40 +1,12 @@
 <div class="main">
+    <a href="{{ product.url }}" class="product__link">
     <div class="product">
         <div class="product__information">
-            <h2 class="product__title">{{ product.name }}</h2>
-            <p class="product__description">{{ product.content }}</p>
-            {% include product-definition.html %}
+            <h2 class="product__title">{{ product.title }}</h2>
+            <p class="product__description">{{ product.description }}</p>
+            {% include product-definition.html product=product %}
         </div>
-        <img src="{{ product.image }}" alt="{{ product.name }} product image" class="product__image">
+        <img src="{{ product.image }}" alt="{{ product.title }} product image" class="product__image">
     </div>
+    </a>
 </div>
-
-<style>
-  body {
-      font-family: Arial, sans-serif;
-  }
-.buy-button {
-        color: #fff;
-        background-color: #008CBA;
-        font-weight: 700;
-        border-radius: 99px;
-        padding: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        outline: none;
-        border: none;
-        white-space: nowrap;
-        transition: .2s transform ease-in-out,.2s box-shadow ease-in-out;
-        box-shadow: 0 0 0 rgba(181,8,8,.2)
-}
-.buy-button:hover {
-                transform: translate(0px,-4px);
-        box-shadow: 0 4px 6px rgba(181,8,8,.2)
-}
-.product__image {
-        grid-area: image;
-        object-fit: cover;
-        border-radius: 4px;
-        box-shadow: 0 18.025px 43.775px rgba(0,0,0,.25)
-}
-</style>

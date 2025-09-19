@@ -1,0 +1,41 @@
+---
+layout: default
+title: Shop
+permalink: /shop/
+---
+
+<div class="shop-container">
+
+  {%- comment -%}
+  Get unique categories from available products only
+  {%- endcomment -%}
+  {% assign categories = site.products | where: "available", true | map: "category" | uniq | sort %}
+
+  {%- for cat in categories -%}
+    <h2 class="shop-category">{{ cat | capitalize }}</h2>
+    <div class="product-grid">
+      {%- assign cat_products = site.products 
+          | where: "category", cat 
+          | where: "available", true 
+          | sort: "title" -%}
+
+      {%- for product in cat_products -%}
+        {% include product.html product=product %}
+      {%- endfor -%}
+    </div>
+  {%- endfor -%}
+
+  {%- comment -%}
+  Coming Soon products grouped at the bottom
+  {%- endcomment -%}
+  {% assign coming = site.products | where: "available", false | sort: "category" | sort: "title" %}
+  {% if coming.size > 0 %}
+    <h2 class="shop-category">Coming Soon</h2>
+    <div class="product-grid">
+      {%- for product in coming -%}
+        {% include product.html product=product %}
+      {%- endfor -%}
+    </div>
+  {% endif %}
+
+</div>
