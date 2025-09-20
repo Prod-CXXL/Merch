@@ -1,45 +1,47 @@
 <header>
-  <div>
-    <!-- Top bar with logo and menu button -->
-    <div class="top-bar">
-        <div class="left-container">
-            <div class="menu-button" id="menu-toggle">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="left-container">
-                <a href="{{ site.baseurl }}/index"><img src="{{ site.baseurl }}/images/LogoBG.png" class="logo" alt="Logo" style="height: 50px;width: 60px;"></a>
-                <span class="site-title" onclick="window.location.href='{{ site.baseurl }}/index'">MERCH</span>
-            </div>
-        </div>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
-          <li><a href="/shop/" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
-          <li><a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
-          <li><a href="#" class="snipcart-checkout cart-link">
-            <span class="material-symbols-outlined cart-icon">shopping_cart</span>
-            <span class="snipcart-total-price cart-total"></span></a></li>
-          <!-- 
-            <li><a href="{{ site.baseurl }}/search"><span class="material-symbols-outlined">search</span></a></li>
-          -->
-        </ul>
+  <!-- Bar A: Menu + Logo + Cart (always visible) -->
+  <div class="top-bar-always">
+  <div class="left-section">
+    <div class="menu-button" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-        
-    <!-- Sliding menu from the right -->
-    <div class="side-menu" id="sideMenu">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="{{ '/' | relative_url }}">HOME</a></li>
-          <li><a href="{{ site.baseurl }}/shop">SHOP</a></li>
-          <li><a href="{{ site.baseurl }}/about">ABOUT</a></li>
-          <li><a href="#" class="snipcart-checkout cart-link">
-            <span class="material-symbols-outlined cart-icon">shopping_cart</span>
-            <span class="snipcart-total-price cart-total"></span></a></li>
-          <!-- 
-            <li><a href="{{ site.baseurl }}/search"><span class="material-symbols-outlined">search</span></a></li>
-          -->
-          </ul>
-    </div>
+    <a href="{{ site.baseurl }}/index">
+      <img src="{{ site.baseurl }}/images/LogoBG.png" class="logo" alt="Logo" style="height: 50px;width: 60px;">
+    </a>
+    <span class="site-title" onclick="window.location.href='{{ site.baseurl }}/index'">MERCH</span>
   </div>
 
+  <div class="right-section">
+    <a href="#" class="snipcart-checkout cart-link">
+      <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+      <span class="snipcart-total-price cart-total"></span>
+    </a>
+  </div>
+</div>
+
+  <!-- Bar B: Nav links (disappears when side menu is open) -->
+  <div class="top-bar-extra" id="topBarExtra">
+    <ul class="nav-links">
+      <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
+      <li><a href="/shop/" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
+      <li><a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
+    </ul>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="side-menu" id="sideMenu">
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}">HOME</a></li>
+      <li><a href="{{ site.baseurl }}/shop">SHOP</a></li>
+      <li><a href="{{ site.baseurl }}/about">ABOUT</a></li>
+      <li>
+        <a href="#" class="snipcart-checkout cart-link">
+          <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+          <span class="snipcart-total-price cart-total"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>

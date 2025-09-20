@@ -12,46 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-toggle");
   const sideMenu = document.getElementById("sideMenu");
   const overlay = document.querySelector(".overlay");
+  const topBar = document.querySelector(".top-bar-extra");
 
-  if (!menuBtn || !sideMenu || !overlay) return;
-
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("open");
-    sideMenu.classList.toggle("open");
-    overlay.classList.toggle("show");
-  });
-
-  overlay.addEventListener("click", () => {
-    menuBtn.classList.remove("open");
-    sideMenu.classList.remove("open");
-    overlay.classList.remove("show");
-  });
-});
-
-    // Ensure menu is closed on page load
-    toggleMenu(false);
-
-    // Add click handlers
-    if (menuButton) {
-        menuButton.addEventListener('click', () => toggleMenu(true));
-    }
-    if (closeMenu) {
-        closeMenu.addEventListener('click', () => toggleMenu(false));
-    }
-    if (overlay) {
-        overlay.addEventListener('click', () => toggleMenu(false));
-    }
-
-    // Top bar scroll effect
-    const topBar = document.querySelector('.top-bar');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-            topBar.classList.add('scrolled');
-        } else {
-            topBar.classList.remove('scrolled');
-        }
+  // Menu toggle
+  if (menuBtn && sideMenu && overlay) {
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("open");
+      sideMenu.classList.toggle("open");
+      overlay.classList.toggle("show");
     });
+
+    overlay.addEventListener("click", () => {
+      menuBtn.classList.remove("open");
+      sideMenu.classList.remove("open");
+      overlay.classList.remove("show");
+    });
+  }
+
+  // Top bar scroll effect
+  if (topBar) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        topBar.classList.add("scrolled");
+      } else {
+        topBar.classList.remove("scrolled");
+      }
+    });
+  }
+});
 
 // Search functionality
 const searchInput = document.getElementById('site-search');

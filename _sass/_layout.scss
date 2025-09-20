@@ -10,7 +10,7 @@ body {
   background-color: #a1a5a9;
   font-family: Oswald, sans-serif;
   margin: 50px 0px;
-  padding: 0 0 50px 0;
+  padding: 0 20px 50px 20px; /* Space for the fixed top bar */
   display: flex;
   justify-content: center;
 }
@@ -27,6 +27,7 @@ body {
 .site-title {
   font-size: 22px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .index header {
@@ -53,47 +54,37 @@ html, body {
 }
 
 /* Top Bar Styles */
-.top-bar {
+.top-bar-extra {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(161, 165, 169, 0.8);
+  background: rgb(161 165 169 / 50%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  z-index: 19;
-  padding: 0px 5px;
   height: 45px; // Add this line to set explicit height
-  transition: box-shadow 0.3s ease; /* Add smooth transition for shadow */
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.top-bar.scrolled {
+.top-bar-extra.scrolled {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Left side container: menu-button and title */
-.left-container {
-  display: flex;
-  align-items: center;
+  transition: box-shadow 0.7s ease; /* Add smooth transition for shadow */
 }
 
 .menu-button:hover {
   color: white;
 }
 
-/* Top Bar title */
-.top-bar span {
-  color: black;
-}
-
-.top-bar span:hover {
+.top-bar-extra span:hover {
   cursor: pointer;
 }
 
-.top-bar #navLinks {
+.top-bar-extra #navLinks {
     display: flex;
     align-items: center;
 }
@@ -101,8 +92,10 @@ html, body {
 /* Nav links (right-aligned) */
 .nav-links {
   list-style-type: none;
-  padding: 0 20px 0 0;
+  padding: 0 15px 0 0;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links li {
@@ -114,7 +107,7 @@ html, body {
   text-decoration: none;
 }
 
-.top-bar .nav-links li a:hover {
+.top-bar-extra .nav-links li a:hover {
   color: white;
 }
 
@@ -123,12 +116,12 @@ html, body {
   height: 100vh;
   width: 0;
   position: fixed;
-  top: 45px;
+  top: 0;
   left: 0;
   background-color: rgba(161, 165, 169, 0.8);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  overflow: hidden; /* Change from overflow-x to just overflow */
+  overflow: hidden;
   transition: all 0.5s ease;
   padding-top: 60px;
   z-index: 18;
@@ -150,9 +143,10 @@ html, body {
 .side-menu .nav-links {
   display: flex;
   flex-direction: column; /* stack vertically */
-  gap: 1.5rem;
-  padding: 0 1rem;
+  gap: 40px;
+  padding: 20px 10px;
   list-style: none;
+  align-items: flex-start;
 }
 
 .side-menu .nav-links li a {
@@ -174,7 +168,53 @@ html, body {
 }
 
 .side-menu .nav-links li a span.material-symbols-outlined {
-    font-size: 42px;
+  font-size: 42px;
+}
+
+/* Bar A: always visible */
+.top-bar-always {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px;
+  background: transparent;
+  z-index: 20;
+  pointer-events: none; /* disable clicks by default */
+}
+
+.top-bar-always > * {
+  pointer-events: auto; /* buttons/logo/title stay clickable */
+}
+
+/* Left side (menu + logo + title) */
+.top-bar-always .left-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* spacing between items */
+  padding-left: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Right side (cart only) */
+.top-bar-always .right-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide nav bar when sidebar opens */
+.sidebar-open .top-bar-extra {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* Overlay */
@@ -210,10 +250,46 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
-  background-color: rgba(161, 165, 169, 0.8); /* Changed from solid to semi-transparent */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  //z-index: 999; /* Add z-index to ensure footer stays on top */
+  background: transparent; /* remove the old flat blur */
+  z-index: 20;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: transparent; /* no flat color here */
+  z-index: 20;
+  overflow: visible; /* allow pseudo-element to bleed upward */
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: -40px; /* extend ABOVE the footer */
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  /* This gradient makes the top fade smoothly */
+  mask-image: linear-gradient(to bottom,
+    rgb(0 0 0 / 0%) 0%,     /* invisible above */
+    rgb(0 0 0 / 50%) 20%, /* soft fade */
+    rgb(0 0 0 / 100%) 65%   /* full blur at bottom */
+  );
+  -webkit-mask-image: linear-gradient(to bottom,
+    rgb(0 0 0 / 0%) 0%,
+    rgb(0 0 0 / 50%) 20%,
+    rgb(0 0 0 / 100%) 65%
+  );
+
+  pointer-events: none; /* don’t block clicks */
+  z-index: -1; /* sit behind footer text/icons */
 }
 
 footer p {
@@ -221,6 +297,32 @@ footer p {
   font-size: 10px;
   font-family: Oswald, sans-serif;
 }
+
+/*
+.footer-content {
+    display: inline-block;
+    background: rgba(161, 165, 169, 0.1);
+    border-radius: 9px;
+    padding: 5px 5px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.footer-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
+}
+*/
 
 .social-media {
   display: flex;
@@ -243,7 +345,7 @@ footer p {
 
 /* Responsive Styles for small screens */
 @media screen and (max-width: 800px) {
-  .top-bar #navLinks {
+  #navLinks {
     display: none;
   }
 
@@ -265,13 +367,6 @@ footer p {
     display: flex;
   }
 
-  .top-bar span {
-    text-align: left;
-  }
-
-  .left-container img{
-    padding: 3px 5px 0px 2px;
-  }
 }
 
 @media screen and (max-width: 500px) {
@@ -286,16 +381,6 @@ footer p {
   .menu-button {
     display: block;
   }
-
-  .left-container {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .left-container img {
-    padding: 0;
-    margin-right: 37px;
-  }
 }
 
 /* Larger screens */
@@ -304,13 +389,6 @@ footer p {
     display: none;
   }
 
-  .nav-links {
-    justify-content: flex-end;
-  }
-
-  .left-container img{
-    padding: 5px 7px 0px 7px;
-  }
 }
 
 .hero-compact {
@@ -391,7 +469,7 @@ footer p {
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 18.025px 20px rgba(0,0,0,.25);
-  margin: 20px 20px;
+  margin: 20px 0px;
   max-width: 750px; /* Maximum width for each product */
 }
 
@@ -508,9 +586,12 @@ button.buy-button.coming-soon {
   display: flex;
   gap: 6px; 
   text-decoration: none;
+  color: black;
+  align-items: center;
+  font-size: larger;
 }
 
-.top-bar .cart-link:hover {
+.top-bar-always .cart-link:hover {
   color: white;
 }
 
@@ -617,4 +698,12 @@ button.buy-button.coming-soon {
             }
         }
     }
+}
+
+.top-bar-always .cart-icon {
+  font-size: 28px;
+}
+
+.top-bar-always .cart-total {
+  font-size: 20px;
 }
