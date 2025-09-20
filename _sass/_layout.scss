@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* General Styles */
 @font-face {
   font-family: 'Oswald';
@@ -285,7 +287,7 @@ footer::before {
     rgba(0, 0, 0, 0), 
     rgba(0, 0, 0, 0.95), 
     rgba(0, 0, 0, 1));
-  pointer-events: none; /* don’t block clicks */
+  pointer-events: none; /* don't block clicks */
   z-index: -1; /* sit behind footer text/icons */
 }
 
