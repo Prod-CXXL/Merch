@@ -3,8 +3,8 @@ title: Merch
 email: prod.cxxl@gmail.com
 description: >
   Merch for you, Made by CXXL
-baseurl: ''
-url: 'https://hexa1a5a9.com'
+baseurl: 'Merch' # the subpath of your site, e.g. /blog
+url: 'https://hexa1a5a9.com' # the base hostname & protocol for your site
 twitter_username: prod.cxxl
 github_username:  prod.cxxl
 
