@@ -7,11 +7,11 @@
 {% else %}
   <button
     class="buy-button snipcart-add-item"
-    data-item-id="{{ item.id }}"
+    data-item-id="{{ item.identifier | default: item.slug }}"
     data-item-name="{{ item.title }}"
     data-item-price="{{ item.price }}"
-    data-item-url="{{ item.url }}"
-    data-item-image="{{ item.image }}"
+    data-item-url="{{ site.baseurl }}{{ item.url }}"
+    data-item-image="{{ site.baseurl }}{{ item.image }}"
     data-item-description="{{ item.description }}">
     Add to cart (${{ item.price }})
   </button>

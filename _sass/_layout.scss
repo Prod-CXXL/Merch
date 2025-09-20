@@ -59,7 +59,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgb(161 165 169 / 50%);
+  background: #a1a5a980;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -278,14 +278,14 @@ footer::before {
 
   /* This gradient makes the top fade smoothly */
   mask-image: linear-gradient(to bottom,
-    rgb(0 0 0 / 0%) 0%,     /* invisible above */
-    rgb(0 0 0 / 50%) 20%, /* soft fade */
-    rgb(0 0 0 / 100%) 65%   /* full blur at bottom */
+    rgba(0, 0, 0, 0),     /* invisible above */
+    rgba(0, 0, 0, 0.2), /* soft fade */
+    rgba(0, 0, 0, 0.65)   /* full blur at bottom */
   );
   -webkit-mask-image: linear-gradient(to bottom,
-    rgb(0 0 0 / 0%) 0%,
-    rgb(0 0 0 / 50%) 20%,
-    rgb(0 0 0 / 100%) 65%
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.65)
   );
 
   pointer-events: none; /* don’t block clicks */
@@ -542,7 +542,7 @@ footer p {
 }
 
 button.buy-button.coming-soon {
-    background-color: rgb(87, 87, 87);
+    background-color: rgba(87, 87, 87, 1);
     cursor: not-allowed;
     color: #fff;
     font-weight: bold;

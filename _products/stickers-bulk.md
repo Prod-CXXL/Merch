@@ -16,5 +16,5 @@ available: true
 Made from premium matte vinyl sticker paper.
 
 - High-quality
-- Waterproof
 - Available with any design
+- Waterproof

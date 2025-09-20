@@ -24,9 +24,9 @@
   <!-- Bar B: Nav links (disappears when side menu is open) -->
   <div class="top-bar-extra" id="topBarExtra">
     <ul class="nav-links">
-      <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
-      <li><a href="/shop/" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
-      <li><a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
+      <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
+      <li><a href="{{ site.baseurl }}/shop/" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
+      <li><a href="{{ site.baseurl }}/about/" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
     </ul>
   </div>
 
