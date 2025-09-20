@@ -1,32 +1,32 @@
 <header>
   <!-- Bar A: Menu + Logo + Cart (always visible) -->
   <div class="top-bar-always">
-  <div class="left-section">
-    <div class="menu-button" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="left-section">
+      <div class="menu-button" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="{{ '/index' | relative_url }}">
+        <img src="{{ '/images/LogoBG.png' | relative_url }}" class="logo" alt="Logo" style="height: 50px; width: 60px;">
+      </a>
+      <span class="site-title" onclick="window.location.href='{{ '/index' | relative_url }}'">MERCH</span>
     </div>
-    <a href="{{ site.baseurl }}/index">
-      <img src="{{ site.baseurl }}/images/LogoBG.png" class="logo" alt="Logo" style="height: 50px;width: 60px;">
-    </a>
-    <span class="site-title" onclick="window.location.href='{{ site.baseurl }}/index'">MERCH</span>
-  </div>
 
-  <div class="right-section">
-    <a href="#" class="snipcart-checkout cart-link">
-      <span class="material-symbols-outlined cart-icon">shopping_cart</span>
-      <span class="snipcart-total-price cart-total"></span>
-    </a>
+    <div class="right-section">
+      <a href="#" class="snipcart-checkout cart-link">
+        <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+        <span class="snipcart-total-price cart-total"></span>
+      </a>
+    </div>
   </div>
-</div>
 
   <!-- Bar B: Nav links (disappears when side menu is open) -->
   <div class="top-bar-extra" id="topBarExtra">
     <ul class="nav-links">
       <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
-      <li><a href="{{ site.baseurl }}/shop/" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
-      <li><a href="{{ site.baseurl }}/about/" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
+      <li><a href="{{ '/shop/' | relative_url }}" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
+      <li><a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
     </ul>
   </div>
 
@@ -34,8 +34,8 @@
   <div class="side-menu" id="sideMenu">
     <ul class="nav-links">
       <li><a href="{{ '/' | relative_url }}">HOME</a></li>
-      <li><a href="{{ site.baseurl }}/shop">SHOP</a></li>
-      <li><a href="{{ site.baseurl }}/about">ABOUT</a></li>
+      <li><a href="{{ '/shop/' | relative_url }}">SHOP</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">ABOUT</a></li>
       <li>
         <a href="#" class="snipcart-checkout cart-link">
           <span class="material-symbols-outlined cart-icon">shopping_cart</span>
