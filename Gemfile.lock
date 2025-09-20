@@ -281,7 +281,7 @@ DEPENDENCIES
   bigdecimal
   github-pages
   http_parser.rb (~> 0.6.0)
-  jekyll-feed (~> 0.12)
+  jekyll-feed
   jekyll-sitemap
   logger
   tzinfo (>= 1, < 3)

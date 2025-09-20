@@ -278,16 +278,13 @@ footer::before {
 
   /* This gradient makes the top fade smoothly */
   mask-image: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0),     /* invisible above */
-    rgba(0, 0, 0, 0.2), /* soft fade */
-    rgba(0, 0, 0, 0.65)   /* full blur at bottom */
-  );
-  -webkit-mask-image: linear-gradient(to bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.65)
-  );
-
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0.95), 
+    rgba(0, 0, 0, 1));
+-webkit-mask-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0), 
+    rgba(0, 0, 0, 0.95), 
+    rgba(0, 0, 0, 1));
   pointer-events: none; /* don’t block clicks */
   z-index: -1; /* sit behind footer text/icons */
 }
@@ -345,16 +342,6 @@ footer p {
 
 /* Responsive Styles for small screens */
 @media screen and (max-width: 800px) {
-  #navLinks {
-    display: none;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
   .nav-links.active {
     display: flex;
   }
@@ -369,15 +356,13 @@ footer p {
 
 }
 
+@media screen and (max-width: 700px) {
+    .nav-links {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 500px) {
-  .nav-links {
-    display: none;
-  }
-
-  .site-title {
-    display: none;
-  }
-
   .menu-button {
     display: block;
   }
