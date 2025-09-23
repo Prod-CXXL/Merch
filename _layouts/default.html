@@ -1,4 +1,11 @@
+  {% if site.data.branding.site_name != "HasMerch" %}
+  {% assign dynamic_baseurl = "/" | append: site.data.branding.site_name | downcase %}
+  {% else %}
+  {% assign dynamic_baseurl = "" %}
+  {% endif %}
+  
 <!DOCTYPE html>
+  
 <html lang="en">
   <!-- Head -->
   {% include head.html %}
@@ -21,6 +28,6 @@
   </body>
 
   <!-- Load the JavaScript -->
-  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <script src="{{ dynamic_baseurl }}/js/scripts.js"></script>
 
 </html>

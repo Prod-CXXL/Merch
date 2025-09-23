@@ -3,7 +3,7 @@
 title: {{ site.data.branding.site_name }}
 email: {{ site.data.branding.email }}
 description: {{ site.data.branding.tagline }}
-baseurl: "{% if site.data.branding.site_name != 'HasMerch' %}/{{ site.data.branding.site_name | downcase }}{% endif %}"
+baseurl: /{{ site.data.branding.site_name | downcase }}
  # the subpath of your site, e.g. /blog
 url: 'https://hasmerch.com'
 twitter_username: {{ site.data.branding.twitter }}
@@ -13,8 +13,8 @@ github_username:  {{ site.data.branding.github }}
 plugins:
   - jekyll-feed
 feed:
-  icon: /images/{{ site.data.branding.icon }}.png
-  logo: /images/{{ site.data.branding.logo }}.png
+  icon: {{ dynamic_baseurl }}/assets/images/{{ site.data.branding.icon }}.png
+  logo: {{ dynamic_baseurl }}/assets/images/{{ site.data.branding.logo }}.png
 collections:
   products:
     output: true
