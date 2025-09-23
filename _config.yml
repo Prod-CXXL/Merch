@@ -3,7 +3,7 @@
 title: {{ site.data.branding.site_name }}
 email: {{ site.data.branding.email }}
 description: {{ site.data.branding.tagline }}
-baseurl: {% if site.data.branding.site_name != 'HasMerch' %}/{{ site.data.branding.site_name | downcase }}{% endif %}
+baseurl: "{% if site.data.branding.site_name != 'HasMerch' %}/{{ site.data.branding.site_name | downcase }}{% endif %}"
  # the subpath of your site, e.g. /blog
 url: 'https://hasmerch.com'
 twitter_username: {{ site.data.branding.twitter }}
