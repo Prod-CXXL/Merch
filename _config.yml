@@ -1,20 +1,21 @@
 # encoding: utf-8
 # Site settings
-title: HasMerch
-email: prod.cxxl@gmail.com
+title: {{ site.data.branding.site_name }}
+email: {{ site.data.branding.email }}
 description: >
-  Merch for you, Made by CXXL
-baseurl: ''
+  {{ site.data.branding.tagline }}
+baseurl: "{% if site.data.branding.site_name != 'Hasmerch' %}/{{ site.data.branding.site_name | downcase }}{% endif %}"
+ # the subpath of your site, e.g. /blog
 url: 'https://hasmerch.com'
-twitter_username: prod.cxxl
-github_username:  prod.cxxl
+twitter_username: {{ site.data.branding.twitter }}
+github_username:  {{ site.data.branding.github }}
 
 # Build settings
 plugins:
   - jekyll-feed
 feed:
-  icon: /images/LogoBG.png
-  logo: /images/LogoFull.JPG
+  icon: /images/{{ site.data.branding.icon }}.png
+  logo: /images/{{ site.data.branding.logo }}.png
 collections:
   products:
     output: true

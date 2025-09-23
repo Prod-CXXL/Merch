@@ -5,8 +5,9 @@ site_name: "HasMerch"
 tagline: "Your one-stop shop for custom merchandise"
 
 # Fonts
-heading: "'Montserrat', sans-serif"
-body: "'Open Sans', sans-serif"
+fonts:
+  main: "'Oswald', sans-serif"
+  secondary: "'Open Sans', sans-serif"
 
 # Colors
 colors:
@@ -16,16 +17,18 @@ colors:
   text: ""
 
 # Assets
-logo: ""
-favicon: ""
-hero_image: ""
+logo: "LogoFull.JPG"
+favicon: "favicon.ico"
+hero_image: "LogoBG.png"
 
 # Socials
-email: ""
-snapchat: ""
-instagram: ""
-tiktok: ""
-twitter: ""
+email: "prod.cxxl@gmail.com"
+snapchat: "prod.cxxl"
+instagram: "prod.cxxl"
+tiktok: "prod.cxxl"
+twitter: "prod.cxxl"
+soundcloud: "prod-cxxl"
+spotify: "https://open.spotify.com/artist/1oWfjjRo2dwQW1rz4BtVHu"
 
-# Footer
-copyright: ""
+#Snipcart Key
+snipcart_key: "N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4"

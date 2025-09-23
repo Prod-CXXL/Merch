@@ -15,10 +15,10 @@
   />
 
   <!-- Favicon -->
-  <link rel="icon" href="{{ "/assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
+  <link rel="icon" href="{{ "/assets/icons/{{ site.data.branding.favicon }}" | prepend: site.baseurl }}" type="image/x-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family="{{ site.data.branding.fonts.main }}":wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
 
   <!-- Font Awesome -->
@@ -30,7 +30,7 @@
   <!-- Snipcart Config (must be BEFORE snipcart.js) -->
   <script>
     window.SnipcartSettings = {
-      publicApiKey: "N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4",
+      publicApiKey: "{{ site.data.branding.snipcart_key }}",
       addProductBehavior: "none",  // Prevents modal from opening when adding products
       modalStyle: "side"
     };

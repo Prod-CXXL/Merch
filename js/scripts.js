@@ -74,9 +74,9 @@ async function performSearch(searchTerm) {
 
     try {
         const pagePaths = [
-            '/MERCH/',
-            '/MERCH/shop/',
-            '/MERCH/about/'
+            '/{{ site.data.branding.site_name }}/',
+            '/{{ site.data.branding.site_name }}/shop/',
+            '/{{ site.data.branding.site_name }}/about/'
         ];
 
         const results = [];
