@@ -1,14 +1,14 @@
 ---
 layout: product
-title: "Classic Hoodie"
-identifier: hoodie-classic
+title: "Basic Tumbler"
+identifier: tumblers-basic
 price: 49.99
-image: /assets/images/hoodie-main.jpg
+image: /assets/images/tumblers.jpg
 images:
-  - /assets/images/hoodie-front.jpg
-  - /assets/images/hoodie-back.jpg
+  - /assets/images/tumblers-front.jpg
+  - /assets/images/tumblers-back.jpg
 description: "A comfy, high-quality custom made hoodie"
-permalink: /shop/hoodie-classic/
+permalink: /shop/tumblers-basic/
 available: false
 ---
 

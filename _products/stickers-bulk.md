@@ -6,7 +6,7 @@ price: 99.99
 category: "stickers"
 image: "/media/images/stickers-bulk.png"
 images:
-  - /assets/images/stickers-bulk-main.jpg
+  - /assets/images/stickers-bulk-front.jpg
   - /assets/images/stickers-bulk-back.jpg
 description: "Matte high-quality QR code printed on 100 vinyl stickers."
 permalink: /shop/stickers-bulk/

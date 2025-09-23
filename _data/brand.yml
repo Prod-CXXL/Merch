@@ -1,0 +1,31 @@
+# _data/branding.yml
+
+# Name & Tagline
+site_name: "HasMerch"
+tagline: "Your one-stop shop for custom merchandise"
+
+# Fonts
+heading: "'Montserrat', sans-serif"
+body: "'Open Sans', sans-serif"
+
+# Colors
+colors:
+  primary: ""
+  secondary: ""
+  background: ""
+  text: ""
+
+# Assets
+logo: ""
+favicon: ""
+hero_image: ""
+
+# Socials
+email: ""
+snapchat: ""
+instagram: ""
+tiktok: ""
+twitter: ""
+
+# Footer
+copyright: ""

@@ -6,7 +6,7 @@ price: 29.99
 category: "cards"
 image: /assets/images/card.png
 images:
-  - /assets/images/card-main.jpg
+  - /assets/images/card-front.jpg
   - /assets/images/card-back.jpg
 description: "A premium NFC business card that lets you instantly share your contact info."
 permalink: /shop/card-business/
