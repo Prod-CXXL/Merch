@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  {% include head.html %}
+
+  <!-- Body -->
+  <body>
+    <!-- Header -->
+    {% include header.html %}
+    <div class="overlay"></div>
+    
+    <!-- Main content -->
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    <!-- Footer -->
+    {% include footer.html %}
+    <!-- near the end of your _layouts/default.html, before </body> -->
+    <div hidden id="snipcart"></div>
+  </body>
+
+  <!-- Load the JavaScript -->
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+
+</html>
