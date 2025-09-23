@@ -1,10 +1,11 @@
+# encoding: utf-8
 # Site settings
-title: Merch
+title: HasMerch
 email: prod.cxxl@gmail.com
 description: >
   Merch for you, Made by CXXL
-baseurl: '/Merch'
-url: 'https://hexa1a5a9.com'
+baseurl: ''
+url: 'https://hasmerch.com'
 twitter_username: prod.cxxl
 github_username:  prod.cxxl
 
