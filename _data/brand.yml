@@ -6,8 +6,8 @@ tagline: "Your one-stop shop for custom merchandise"
 
 # Fonts
 fonts:
-  main: "'Oswald', sans-serif"
-  secondary: "'Open Sans', sans-serif"
+  main: "Oswald"
+  secondary: "Open Sans"
 
 # Colors
 colors:
@@ -25,10 +25,10 @@ hero_image: "LogoBG.png"
 email: "prod.cxxl@gmail.com"
 snapchat: "prod.cxxl"
 instagram: "prod.cxxl"
-tiktok: "prod.cxxl"
+tiktok: "@prod.cxxl"
 twitter: "prod.cxxl"
 soundcloud: "prod-cxxl"
 spotify: "https://open.spotify.com/artist/1oWfjjRo2dwQW1rz4BtVHu"
 
 #Snipcart Key
-snipcart_key: "N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4"
+snipcart_key: N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4
