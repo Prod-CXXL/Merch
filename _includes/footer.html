@@ -6,7 +6,7 @@
         <a href="{{ site .data.branding.spotify }}" target="_blank"><i class="fab fa-spotify"></i></a>
         <a href="https://instagram.com/{{ site.data.branding.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://soundcloud.com/{{ site.data.branding.soundcloud }}" target="_blank"><i class="fab fa-soundcloud"></i></a>
-        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/{{ site.data.branding.logo }}" class="logo" alt="Logo"></a>
+        <a href="{{ site.baseurl }}/"><img src="{{ '/assets/images/' | append: site.data.branding.logo | relative_url }}" class="logo" alt="Logo"></a>
         <a href="https://twitter.com/{{ site.data.branding.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://www.tiktok.com/@{{ site.data.branding.tiktok }}" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://www.snapchat.com/add/{{ site.data.branding.snapchat }}" target="_blank"><i class="fab fa-snapchat"></i></a>
