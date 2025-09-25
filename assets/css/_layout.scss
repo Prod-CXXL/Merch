@@ -198,8 +198,20 @@ html, body {
 .logo {
   height: 30px;
   width: 30px;
-  padding-right: 7px;
-  padding-top: 5px;
+  padding-top: 6px;
+}
+
+.footer-content .logo {
+  height: 25px;
+  width: 25px;
+  padding-top: 7px;
+}
+
+.social-media .a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* spacing between items */
+  padding-left: 10px;
 }
 
 /* Right side (cart only) */
