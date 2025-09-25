@@ -1,4 +1,9 @@
-# HasMerch  
+# HasMerch
+⚠️ **Proprietary Project – All Rights Reserved**  
+This repository is private intellectual property of **HasMerch**.  
+It is **not open source** and may not be copied, redistributed, or modified without permission.  
+
+---
 
 **HasMerch** is a customizable online storefront platform built to give creators, brands, and small businesses their own dedicated merch shop.  
 Each store runs under a clean, branded subdomain (e.g., `yourname.hasmerch.com`) and features a styled catalog, dynamic pricing charts, and a checkout powered by Snipcart.  
