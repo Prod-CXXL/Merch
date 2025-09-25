@@ -1,6 +1,6 @@
 ---
 layout: product
-title: "Premium NFC Business Card"
+title: "NFC Cards"
 identifier: business-card-premium
 price: 29.99
 category: "cards"

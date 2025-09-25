@@ -7,10 +7,11 @@
         <span></span>
         <span></span>
       </div>
-      <a href="{{ '/index' | relative_url }}">
-        <img src="{{ '/images/{{ site.data.branding.favicon }}' | relative_url }}" class="logo" alt="Logo" style="height: 50px; width: 60px;">
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/images/' | append: site.data.branding.logo | relative_url }}" 
+        class="logo" alt="{{ site.data.branding.site_name }} Logo">
       </a>
-      <span class="site-title" href="{{ '/index' | relative_url }}">MERCH</span>
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.data.branding.site_name }}</a>
     </div>
 
     <div class="right-section">
@@ -21,10 +22,10 @@
     </div>
   </div>
 
-  <!-- Bar B: Nav links (disappears when side menu is open) -->
+  <!-- Bar B: Nav links -->
   <div class="top-bar-extra" id="topBarExtra">
     <ul class="nav-links">
-      <li><a href="{{ '/index' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
+      <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
       <li><a href="{{ '/shop/' | relative_url }}" class="{% if page.url contains '/shop' %}active{% endif %}">SHOP</a></li>
       <li><a href="{{ '/about/' | relative_url }}" class="{% if page.url == '/about/' %}active{% endif %}">ABOUT</a></li>
     </ul>
@@ -33,7 +34,7 @@
   <!-- Sidebar -->
   <div class="side-menu" id="sideMenu">
     <ul class="nav-links">
-      <li><a href="{{ '/index' | relative_url }}">HOME</a></li>
+      <li><a href="{{ '/' | relative_url }}">HOME</a></li>
       <li><a href="{{ '/shop/' | relative_url }}">SHOP</a></li>
       <li><a href="{{ '/about/' | relative_url }}">ABOUT</a></li>
       <li>

@@ -1,6 +1,6 @@
 ---
 layout: product
-title: "Basic Tumbler"
+title: "Tumbler"
 identifier: tumblers-basic
 price: 49.99
 image: /assets/images/tumblers.jpg

@@ -1,6 +1,6 @@
 ---
 layout: product
-title: "Premuim Vinyl Stickers"
+title: "Stickers"
 identifier: stickers
 price: 6.99
 category: "stickers"

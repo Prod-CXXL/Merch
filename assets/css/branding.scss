@@ -1,0 +1,12 @@
+---
+---
+:root {
+  --color-bg: {{ site.data.branding.colors.background }};
+  --color-font: {{ site.data.branding.colors.font }};
+  --color-hover: {{ site.data.branding.colors.hover }};
+  --color-card: {{ site.data.branding.colors.card }};
+  --color-button: {{ site.data.branding.colors.button }};
+  --color-product: {{ site.data.branding.colors.product }};
+  
+  --font-primary: {{ site.data.branding.fonts.main | default: 'Arial, sans-serif' }};
+}

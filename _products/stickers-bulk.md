@@ -1,14 +1,14 @@
 ---
 layout: product
-title: "100 Vinyl Stickers"
-identifier: business-card-premium
-price: 99.99
+title: "Stickers"
+identifier: stickers-bulk
+price: 110.00
 category: "stickers"
 image: "/media/images/stickers-bulk.png"
 images:
   - /assets/images/stickers-bulk-front.jpg
   - /assets/images/stickers-bulk-back.jpg
-description: "Matte high-quality QR code printed on 100 vinyl stickers."
+description: "100 matte high-quality QR codes or custom graphics printed on durable vinyl stickers."
 permalink: /shop/stickers-bulk/
 available: true
 ---

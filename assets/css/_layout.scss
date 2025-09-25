@@ -1,16 +1,8 @@
 @charset "utf-8";
 
-/* General Styles */
-@font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/Oswald.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
-  background-color: #a1a5a9;
-  font-family: Oswald, sans-serif;
+  background-color: var(--color-bg);
+  font-family: var(--font-primary);
   margin: 50px 0px;
   padding: 0 20px 50px 20px; /* Space for the fixed top bar */
   display: flex;
@@ -27,6 +19,8 @@ body {
 }
 
 .site-title {
+  text-decoration: none; 
+  color: inherit;
   font-size: 22px;
   font-weight: bold;
   cursor: pointer;
@@ -61,7 +55,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  background: #a1a5a980;
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -120,7 +114,6 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(161, 165, 169, 0.8);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   overflow: hidden;
@@ -165,7 +158,7 @@ html, body {
 /* Open the side menu */
 .side-menu.open {
   width: 250px; /* Adjust width as needed */
-  background-color: rgba(161, 165, 169, 0.8);
+  background-color: color-mix(in srgb, var(--color-bg) 80%, transparent);
   backdrop-filter: blur(10px);
 }
 
@@ -175,6 +168,7 @@ html, body {
 
 /* Bar A: always visible */
 .top-bar-always {
+
   position: fixed;
   top: 0;
   left: 0;
@@ -202,8 +196,10 @@ html, body {
 }
 
 .logo {
-  height: 40px;
-  width: auto;
+  height: 30px;
+  width: 30px;
+  padding-right: 7px;
+  padding-top: 5px;
 }
 
 /* Right side (cart only) */
@@ -252,16 +248,6 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
-  background: transparent; /* remove the old flat blur */
-  z-index: 20;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
   background: transparent; /* no flat color here */
   z-index: 20;
   overflow: visible; /* allow pseudo-element to bleed upward */
@@ -295,6 +281,11 @@ footer p {
   margin-top: 0;
   font-size: 10px;
   font-family: Oswald, sans-serif;
+}
+
+footer a {
+  color: var(--color-font);
+  text-decoration: none;
 }
 
 /*
@@ -331,13 +322,13 @@ footer p {
 .social-media a {
   margin: 0 7px;
   font-size: 1.5em;
-  color: black;
+  color: var(--color-font);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .nav-links a.active {
-  color: #fff;         /* white */
+  color: var(--color-product);
   font-weight: 700;    /* bold */
   font-size: larger; /* slightly larger */
 }
@@ -407,7 +398,7 @@ footer p {
 }
 
 .btn-primary {
-  background:#0b74de;
+  background: var(--color-button);
   color:#fff;
 }
 
@@ -453,7 +444,7 @@ footer p {
   grid-template-areas: "image info";
   gap: 20px;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--color-card);
   border-radius: 20px;
   box-shadow: 0 18.025px 20px rgba(0,0,0,.25);
   margin: 20px 0px;
@@ -496,7 +487,7 @@ footer p {
 
 .buy-button {
   color: #fff;
-  background-color: black;
+  background-color: var(--color-font);
   font-weight: 700;
   border-radius: 6px;
   padding: 10px;
@@ -573,13 +564,13 @@ button.buy-button.coming-soon {
   display: flex;
   gap: 6px; 
   text-decoration: none;
-  color: black;
+  color: var(--color-font);
   align-items: center;
   font-size: larger;
 }
 
 .top-bar-always .cart-link:hover {
-  color: white;
+  color: var(--color-font);
 }
 
 /* Hamburger base */
@@ -598,7 +589,7 @@ button.buy-button.coming-soon {
   display: block;
   height: 3px;
   width: 100%;
-  background: black;
+  background: var(--color-font);
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
@@ -614,6 +605,15 @@ button.buy-button.coming-soon {
 
 .menu-button.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-7px);
+}
+
+.chart {
+    display: flex
+;
+    justify-content: center;
+    height: 333px;
+    /* width: 500px; */
+    padding-top: 50px;
 }
 
 /* ==================== BULLETIN ====================== */

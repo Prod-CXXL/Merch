@@ -1,6 +1,6 @@
 ---
 layout: product
-title: "Classic Hoodie"
+title: "Hoodies"
 identifier: hoodie-classic
 price: 49.99
 image: /assets/images/hoodie-main.jpg

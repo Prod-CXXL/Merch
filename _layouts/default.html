@@ -1,11 +1,13 @@
-  {% if site.data.branding.site_name != "HasMerch" %}
-  {% assign dynamic_baseurl = "/" | append: site.data.branding.site_name | downcase %}
-  {% else %}
-  {% assign dynamic_baseurl = "" %}
-  {% endif %}
-  
+---
+---
+
+{% if site.data.branding.site_name != "HasMerch" %}
+{% assign dynamic_baseurl = "/" | append: site.data.branding.site_name | downcase %}
+{% else %}
+{% assign dynamic_baseurl = "" %}
+{% endif %}
+
 <!DOCTYPE html>
-  
 <html lang="en">
   <!-- Head -->
   {% include head.html %}
@@ -23,7 +25,6 @@
 
     <!-- Footer -->
     {% include footer.html %}
-    <!-- near the end of your _layouts/default.html, before </body> -->
     <div hidden id="snipcart"></div>
   </body>
 

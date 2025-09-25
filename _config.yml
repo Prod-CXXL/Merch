@@ -3,8 +3,7 @@
 title: {{ site.data.branding.site_name }}
 email: {{ site.data.branding.email }}
 description: {{ site.data.branding.tagline }}
-baseurl: /{{ site.data.branding.site_name | downcase }}
- # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: 'https://hasmerch.com'
 twitter_username: {{ site.data.branding.twitter }}
 github_username:  {{ site.data.branding.github }}
@@ -13,12 +12,15 @@ github_username:  {{ site.data.branding.github }}
 plugins:
   - jekyll-feed
 feed:
-  icon: {{ dynamic_baseurl }}/assets/images/{{ site.data.branding.icon }}.png
-  logo: {{ dynamic_baseurl }}/assets/images/{{ site.data.branding.logo }}.png
+  icon: "icon"
+  logo: "logo"
 collections:
   products:
     output: true
- 
+sass:
+  sass_dir: assets/css
+  style: compressed
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -27,14 +29,14 @@ collections:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+   - .sass-cache/
+   - .jekyll-cache/
+   - gemfiles/
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
